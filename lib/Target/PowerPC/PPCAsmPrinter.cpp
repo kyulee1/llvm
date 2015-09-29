@@ -93,10 +93,8 @@ namespace {
 
     void EmitEndOfAsmFile(Module &M) override;
 
-    void LowerSTACKMAP(MCStreamer &OutStreamer,
-                       const MachineInstr &MI);
-    void LowerPATCHPOINT(MCStreamer &OutStreamer,
-                         const MachineInstr &MI);
+    void LowerSTACKMAP(MCStreamer &OutStreamer, const MachineInstr &MI);
+    void LowerPATCHPOINT(MCStreamer &OutStreamer, const MachineInstr &MI);
     void EmitTlsCall(const MachineInstr *MI, MCSymbolRefExpr::VariantKind VK);
     bool runOnMachineFunction(MachineFunction &MF) override {
       Subtarget = &MF.getSubtarget<PPCSubtarget>();
