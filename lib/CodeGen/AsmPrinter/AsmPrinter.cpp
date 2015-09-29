@@ -102,7 +102,7 @@ static unsigned getGVAlignmentLog2(const GlobalValue *GV, const DataLayout &DL,
 AsmPrinter::AsmPrinter(TargetMachine &tm, std::unique_ptr<MCStreamer> Streamer)
     : MachineFunctionPass(ID), TM(tm), MAI(tm.getMCAsmInfo()),
       OutContext(Streamer->getContext()), OutStreamer(std::move(Streamer)),
-      LastMI(nullptr), LastFn(0), Counter(~0U) {
+      LastMI(nullptr), LastFn(0), Counter(~0U), SM(*this) {
   DD = nullptr;
   MMI = nullptr;
   LI = nullptr;
