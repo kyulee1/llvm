@@ -108,7 +108,7 @@ public:
   typedef std::pair<const GlobalVariable *, unsigned> GOTEquivUsePair;
   MapVector<const MCSymbol *, GOTEquivUsePair> GlobalGOTEquivs;
 
-  /// The stackmaps
+  /// This holds stackmap, patchpoint, or statepoint data that are lowered.
   StackMaps SM;
 
 private:
